@@ -62,6 +62,7 @@
            var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
            var hdl = byCodes('2085-9');
            var ldl = byCodes('2089-1');
+           var wght = byCodes('3141-9');
 
 
           var p = defaultPatient();
@@ -69,6 +70,7 @@
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
+          p.wght = getQuantityValueAndUnit(wght[0]);
 
           // Observations
           //p.lymph = getQuantityValueAndUnit(lymph[0]);
@@ -107,6 +109,7 @@
       lname: {value: ''},
       gender: {value: ''},
       birthdate: {value: ''},
+      wght: {value: ''},
       // lymph: {value: ''}
 
       // Cerner SoF Tutorial Observations
@@ -156,7 +159,7 @@
     $('#gender').html(p.gender);
     $('#birthdate').html(p.birthdate);
     //$('#lymph').html(p.lymph);
-    
+
     // Cerner SoF Tutorial Observations
 
     $('#height').html(p.height);
